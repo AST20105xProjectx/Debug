@@ -324,8 +324,8 @@ DataNode* DataTree::PostOrderCountrySearch(DataNode* Target, string country)
 {
 	if (Target != NULL)
 	{
-		PostOrderTreeDeletion(Target->Left);
-		PostOrderTreeDeletion(Target->Right);
+		PostOrderCountrySearch(Target->Left,country);
+		PostOrderCountrySearch(Target->Right,country);
 
 		if (Target->Country == country)
 		{
@@ -350,7 +350,6 @@ void DataTree::PhoneSearch(DataNode* Target,long long PhoneNum)
 		PhoneSearch(Target->Left,PhoneNum);
 		PhoneSearch(Target->Right,PhoneNum);
 	}
-	//cout << "Time taken:" << (double)(clock() - tStart) / CLOCKS_PER_SEC << "s" << endl;
 }
 
 void DataTree::SkillsSearch(DataNode* Target, string skills)

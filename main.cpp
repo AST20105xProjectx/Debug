@@ -162,7 +162,7 @@ int main()
 				T = Tree->root;
 				Tree->DeleteTotal = 0;
 				auto start = high_resolution_clock::now();
-				Tree->PostOrderCountrySearch(Tree->root, str1);
+				Tree->root = Tree->PostOrderCountrySearch(Tree->root, str1);
 				cout << "There are total of " << Tree->DeleteTotal << " data deleted!\n\n";
 				auto stop = high_resolution_clock::now();
 				auto duration = duration_cast<microseconds>(stop - start);
